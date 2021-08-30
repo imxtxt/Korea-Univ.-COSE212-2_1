@@ -1,0 +1,22 @@
+{
+  (INT 10) => 10;
+  (ADD (INT 1, INT 3)) => 4;
+  (ADD (ADD (INT 1, INT 2), ADD (INT 3, INT 4))) => 10;
+  (SUB (ADD (INT 1, INT 3), ADD (INT 2, INT 4))) => -2;
+  (DIV (SUB (INT 4, ADD (INT 1, INT 2)), ADD (SUB (INT 4, INT 3), DIV (INT 4, INT 2)))) => 0;
+  (MUL (MUL (INT 3, INT 10), ADD (SUB (INT 3, INT 1), DIV (INT 10, INT 2)))) => 210;
+  (MUL (SIGMA (INT 1, INT 10, SUB (MUL(X, X), INT 1)), SIGMA (INT 1, INT 10, SUB (MUL(X, X), INT 1)))) => 140625;
+  (DIV (ADD (INT 4, ADD (INT 4, INT 4)), MUL (INT 1, MUL (INT 2, SUB (INT 4, INT 2))))) => 3;
+  (SIGMA (INT 0, INT 10, X)) => 55;
+  (SIGMA (ADD (INT 1, INT 0), SUB (INT 11, INT 1), X)) => 55;
+  (SIGMA (INT 1, INT 1, SIGMA (X, X, INT 1))) => 1;
+  (SIGMA (INT 1, INT 2, SIGMA (INT 1, ADD (X, INT 2), INT 1))) => 7;
+  (SIGMA (INT 1, INT 2, SIGMA (SUB (X, INT 1), ADD (X, INT 1), INT 3))) => 18;
+  (SIGMA (INT 1, INT 2, SIGMA (SUB (X, INT 1), ADD (X, INT 1), X))) => 9;
+  (SIGMA (DIV (INT 10, INT 2), MUL (ADD (INT 3, INT 10),INT 1), SUB (X, INT 1))) => 72;
+  (SIGMA (SIGMA (INT 1, INT 3, X), SIGMA (INT 3, INT 6, X), MUL (X, MUL (X, X)))) => 29016;
+  (SIGMA (SIGMA (INT 1, SIGMA (INT 1, INT 2, X), X), SIGMA (INT 3, INT 5, X), SIGMA (INT 6, INT 7, X))) => 91;
+  (ADD (SIGMA (INT 1, INT 10, X), SIGMA (INT 1, INT 5, X))) => 70;
+  (MUL (SIGMA (DIV (INT 10, INT 3), MUL (INT 10, INT 3), INT 3), INT 10)) => 840;
+  (SIGMA (INT 1,INT 5, SIGMA (X, ADD(X, INT 5),SIGMA(X, ADD(X, INT 5),SIGMA (ADD (X, INT 5), ADD (X, INT 5), DIV (X, INT 2)))))) => 1125;
+}

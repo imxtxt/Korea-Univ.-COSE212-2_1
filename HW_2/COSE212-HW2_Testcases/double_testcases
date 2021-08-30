@@ -1,0 +1,22 @@
+{
+  (fun x -> x); "Hello" => "Hello";
+  (fun x -> x); [1; 2] => [1; 2];
+  (fun x -> x + 2); 1 => 5;
+  (fun x -> x * 2); 1 => 4;
+  (fun x -> if x >= 0 then 1 else -1); 10 => 1;
+  (fun x -> x * x + x + 1); 10 => 12433;
+  (fun x -> x ^ x); "PL2020" => "PL2020PL2020PL2020PL2020";
+  (fun x -> 2. ** x); 2. => 16.;
+  (fun x -> 2. ** x); 0. => 2.;
+  (fun x -> x ** x); 1. => 1.;
+  (fun x -> x ** x); 2. => 256.;
+  (fun x -> x@x); [1; 2; 3] => [1; 2; 3; 1; 2; 3; 1; 2; 3; 1; 2; 3];
+  (fun x -> x@x); [] => [];
+  (double (fun x -> x + 2)); 1 => 9;
+  (double (fun x -> x * x)); 2 => 65536;
+  ((double double) (fun x -> x + 1)); 0 => 8;
+  (double (fun x -> x@x)); [1] => [1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1];
+  ((double double) (fun x -> x * 2)); 1 => 256;
+  (fun x -> let rec exp a b = if b = 0 then 1 else a * exp a (b - 1) in exp 2 x); 2 => 16;
+  (fun x -> let rec exp a b = if b = 0 then 1 else a * exp a (b - 1) in exp 2 x); 5 => 4294967296;
+}

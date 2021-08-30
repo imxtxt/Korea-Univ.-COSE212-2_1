@@ -1,0 +1,22 @@
+{
+  (Leaf (-1)) => Leaf (-1);
+  (Leaf 1) => Leaf 1;
+  (Left (Leaf 0)) => Right (Leaf 0);
+  (Right (Leaf 100)) => Left (Leaf 100);
+  (LeftRight (Right (Leaf 1), Leaf 2)) => LeftRight (Leaf 2, Left (Leaf 1));
+	(LeftRight ((LeftRight (Leaf 1, Left (Left (Leaf 1)))), Left (Left (Leaf 1)))) => (LeftRight (Right (Right (Leaf 1)), (LeftRight (Right (Right (Leaf 1)), Leaf 1))));
+	(Left (Right (Right (Left (Leaf 1221))))) => Right (Left (Left (Right (Leaf 1221))));
+  (Right (Left (Leaf 1000))) => Left (Right (Leaf 1000));
+  (Left (Right (LeftRight (Leaf 1, Leaf 1)))) => Right (Left (LeftRight (Leaf 1, Leaf 1)));
+  (LeftRight (Leaf 1, Leaf 2)) => LeftRight (Leaf 2, Leaf 1);
+  (LeftRight (Left (Leaf 1), Left (Leaf (-1)))) => LeftRight (Right (Leaf (-1)), Right (Leaf 1));
+  (Left (Right (LeftRight (Right (Leaf 3), Left (Leaf 4))))) => Right (Left (LeftRight (Right (Leaf 4), Left (Leaf 3))));
+  (Left (Right (Left (Right (Leaf (-1000)))))) => Right (Left (Right (Left (Leaf (-1000)))));
+  (LeftRight (LeftRight (Leaf 1, Leaf (-1)), LeftRight(Leaf (-3), Leaf 3))) => LeftRight (LeftRight (Leaf 3, Leaf (-3)), LeftRight (Leaf (-1), Leaf 1));
+  (LeftRight (Left (Leaf 1), Right (Leaf 1))) => LeftRight (Left (Leaf 1), Right (Leaf 1));
+  (LeftRight (Right (Right (Leaf 1)), Leaf 1)) => LeftRight (Leaf 1, Left (Left (Leaf 1)));
+  (LeftRight (Leaf 1, Left (Left (Leaf 1)))) => LeftRight (Right (Right (Leaf 1)), Leaf 1);
+  (Right (Right (LeftRight (Left (Left (Leaf 7)), (Right (Leaf 100)))))) => Left (Left (LeftRight (Left (Leaf 100), Right (Right (Leaf 7)))));
+  (Left (Right (Right (LeftRight (LeftRight (Leaf (-5), Left (Leaf 5)), LeftRight (Right (Leaf 1), Leaf (2))))))) => Right (Left (Left (LeftRight (LeftRight (Leaf 2, Left (Leaf 1)), LeftRight (Right (Leaf 5), Leaf (-5))))));
+  (Right (LeftRight (Left (LeftRight (Leaf 3, Right (Leaf (-898)))), Right (LeftRight (Left (Leaf 77), Leaf (-1)))))) => Left (LeftRight (Left (LeftRight (Leaf (-1), Right (Leaf 77))), Right (LeftRight (Left (Leaf (-898)), Leaf 3))));
+}

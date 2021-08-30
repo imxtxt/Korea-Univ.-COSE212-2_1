@@ -1,0 +1,22 @@
+{
+  (fun x -> -x); (-10); (-1) => 55;
+  (fun x -> -x); 1; 10 => -55;
+  (fun x -> x * x); 1; 10 => 385;
+  (fun x -> x * x); (-10); 10 => 770;
+  (fun x -> x * x + x + 1); 2; 25 => 5872;
+  (fun x -> x * x + x + 1); (-59); 27 => 75835;
+  (fun x -> 2 * x); 1; 10 => 110;
+  (fun x -> 10 - x); 1; 11 => 44;
+  (fun x -> if x mod 2 = 1 then x else 0); 0; 50 => 625;
+  (fun x -> if x mod 2 <> 1 then x else 0); 0; 50 => 650;
+  (fun x -> x * x * x); 1; 10 => 3025;
+  (fun x -> x * x * x * x); 1; 10 => 25333;
+  (fun x -> 0); 1; 100 => 0;
+  (fun x -> 1); 1; 100 => 100;
+  (fun x -> sigma (fun x -> x) 1 x); 1; 10 => 220;
+  (fun x -> sigma (fun x -> x) 1 x); 1; 20 => 1540;
+  (fun x -> let rec exp = fun a b -> if b = 0 then 1 else a * (exp a (b - 1)) in exp 10 x); 0; 5 => 111111;
+  (fun x -> let rec exp = fun a b -> if b = 0 then 1 else a * (exp a (b - 1)) in exp 10 x); 0; 10 => 11111111111;
+  (fun x -> let f x = x + 1 in (f x) * (f x)); 1; 10 => 505;
+  (fun x -> sigma (fun x -> x * 2) 1 x); 0; 5 => 70;
+}
